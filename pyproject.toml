@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "forecaster"
+version = "0.1.0"
+description = "Forecasting"
+authors = ["Cristobal Vasquez"]
+repository = "https://github.com/cristobalvasquezf/case-problem-mercedez.git"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.7.9,<=3.9.7"
+
+
+[tool.poetry.group.test.dependencies]
+# Testing
+coverage = "6.5.0"
+pytest-cov = "4.0.0"
+pytest = "7.2.0"
+# Formatting, linting, pre-commit hook
+black = "23.1.0"
+flake8 = "6.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+include = '\.pyi?$'
+
+[tool.pytest.ini_options]
+minversion = "7.2.0"
+addopts = "-ra"
+testpaths = [
+    "tests",
+]
+python_files = "test_*.py"
+junit_family = "legacy"
+
+[tool.coverage.run]
+branch = true
+command_line = '-m pytest'
+source = ['src/']
+
+[tool.coverage.report]
+precision = 2
+skip_covered = true
+fail_under = 50
