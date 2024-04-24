@@ -24,7 +24,8 @@ The pipeline consists in the follow stages:
 4. Grid search over hyperparameters of ARIMA and SARIMAX models. All p,q,d and seasonal p,q,d are trained based on config.json file.
 5. Forecasting is done with the best model found in the grid search.
 6. The pipeline generates a csv file with the forecasting.
-7. Model validation with the follow metrics: mean squared error, mean absolute error and mean absolute percentage error.
+7. Postprocessing is done only if apply_ln is True to revert the natural logarithm applied to the data.
+8. Model validation with the follow metrics: mean squared error, mean absolute error and mean absolute percentage error.
 
 ```
 python src/pipeline.py -cf config.json
