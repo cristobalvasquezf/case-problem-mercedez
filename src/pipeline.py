@@ -51,9 +51,9 @@ def pipeline_flow(
         seasonal_q_range=seasonal_q_range,
     )
 
-    df_arima_forecast = forecasting_task(grid_search_output=arima_grid_search_result, model_name="arima", steps=steps)
+    df_arima_forecast = forecasting_task(grid_search_output=arima_grid_search_result, model_name="arima", y_test=y_test, steps=steps, validate_model=validate_model)
     df_sarimax_forecast = forecasting_task(
-        grid_search_output=sarimax_grid_search_result, model_name="sarimax", steps=steps
+        grid_search_output=sarimax_grid_search_result, model_name="sarimax", y_test=y_test, steps=steps, validate_model=validate_model
     )
 
     store_forecasting_results_task(
