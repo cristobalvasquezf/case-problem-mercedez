@@ -1,0 +1,17 @@
+{
+  "data_path": "data/train.csv",
+  "output_path": "data",
+  "apply_ln": true,
+  "split_data": false,
+  "test_size": 12,
+  "validate_model": false,
+  "p_range": 3,
+  "q_range": 3,
+  "d": 0,
+  "d_range": 3,
+  "seasonal_p_range": 2,
+  "seasonal_d_range": 2,
+  "seasonal_q_range": 2,
+  "steps": 12,
+  "period": 12
+}

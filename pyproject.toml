@@ -7,7 +7,17 @@ repository = "https://github.com/cristobalvasquezf/case-problem-mercedez.git"
 packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
-python = ">=3.7.9,<=3.9.7"
+python = ">=3.9.0,<3.10"
+pandas = "~2.0.3"
+sktime = "^0.28.0"
+statsmodels = "^0.14.2"
+matplotlib = "^3.8.4"
+seaborn = "^0.13.2"
+pydantic = "^2.7.1"
+prefect = "^2.18.0"
+fire = "^0.6.0"
+argparse = "^1.4.0"
+scipy = "^1.13.0"
 
 
 [tool.poetry.group.test.dependencies]
@@ -17,7 +27,10 @@ pytest-cov = "4.0.0"
 pytest = "7.2.0"
 # Formatting, linting, pre-commit hook
 black = "23.1.0"
-flake8 = "6.0.0"
+
+
+[tool.poetry.group.research.dependencies]
+prophet = "^1.1.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
