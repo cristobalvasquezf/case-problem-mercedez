@@ -16,6 +16,13 @@ The project is configured to create a virtualenv in the project folder called .v
 command poetry install
 With the environment activated its possible to execute the pipeline with the follow command.
 
+```
+python src/pipeline.py -cf config.json
+```
+
+In this case -cf flag refers to a path where config.json is located. This file contains the configuration for the
+pipeline.
+
 The pipeline consists in the follow stages:
 1. Preprocessing of the data. There is a flag called apply_ln that indicates if natural logarithm should be applied to the
    data, this would help to stabilize variance and helps with exponential data behaviors seen during analysis and more. Some reference [here](https://juandelacalle.medium.com/best-tips-and-tricks-when-and-why-to-use-logarithmic-transformations-in-statistical-analysis-9f1d72e83cfc)
@@ -26,13 +33,6 @@ The pipeline consists in the follow stages:
 6. The pipeline generates a csv file with the forecasting.
 7. Postprocessing is done only if apply_ln is True to revert the natural logarithm applied to the data.
 8. Model validation with the follow metrics: mean squared error, mean absolute error and mean absolute percentage error.
-
-```
-python src/pipeline.py -cf config.json
-```
-
-In this case -cf flag refers to a path where config.json is located. This file contains the configuration for the
-pipeline.
 
 The configuration file has the follow fields:
 

@@ -7,7 +7,7 @@ repository = "https://github.com/cristobalvasquezf/case-problem-mercedez.git"
 packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
-python = ">=3.9.0,<3.10"
+python = ">=3.9.0,<3.12"
 pandas = "~2.0.3"
 sktime = "^0.28.0"
 statsmodels = "^0.14.2"
